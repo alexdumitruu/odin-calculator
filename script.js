@@ -1,33 +1,18 @@
+const display = document.getElementById("display");
 
-const add = (a, b) => {
-	return a + b;
-};
-const subtract = (a, b) => {
-	return a - b;
-};
-const multiply = (a, b) => {
-	return a * b;
-};
-const divide = (a, b) => {
-	return a / b;
-};
-
-// TESTING
-
-//console.log(subtract(6, 9))
-
-
-function operate(operand1, operand2, operator)
-{
-    add(operand1, operand2);
+function appendToDisplay(input){
+    display.value += input;
 }
 
-let firstInteger = "";
-let secondInteger = "";
-let operator = "";
-let result = "";
+function clearDisplay(){
+    display.value = "";
+}
 
-function populateDisplay()
-{
-
+function calculate(){
+    try{
+        display.value = eval(display.value);
+    }
+    catch(error){
+        display.value = "Error";
+    }
 }
